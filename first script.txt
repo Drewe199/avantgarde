@@ -1,0 +1,50 @@
+import sys
+username = input("What is your username? ")
+
+if (username) == "DrewE": 
+    print("Thank you!")
+else:
+    print("Access Denied, program will exit.")
+    sys.exit()
+
+password = input("What is your password? ")
+
+if (password) == "Lizard":
+    print("Access Granted!")
+else:
+    print("Wrong password - program will not exit")
+    sys.exit()
+
+num1 = input("I will add your numbers, what is the first? ")
+
+if float(num1) >= 0:
+    print("Thank you.")
+
+num2 = input("What is the second number?")
+
+if float(num2) >= 0:
+    sum = int(num1) + int(num2)
+print("Thank you, your answer is", (sum))
+
+exitq = input("Is there anything else I can do today? You can say yes or no.")
+
+
+if (exitq) == "yes":
+    print("Okay!")
+else:
+    print("Okay! Goodbye!")
+    sys.exit()
+
+divy = input("Would you like me to divide your numbers? ")
+
+if (divy) == "yes":
+    divide = int(num1) / int(num2)
+    print("Thank you, divided they are", (divide))
+else:
+    print("Okay, no problem!")
+
+subtract = input("Would you like me to subtract your numbers?")
+
+if (subtract) == "yes":
+    subtract = int(num1) - int(num2)
+    print(subtract)
