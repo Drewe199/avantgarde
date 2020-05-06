@@ -12,7 +12,7 @@ def translate(w):
         if yn == "Y":
             return data[get_close_matches(w, data.keys())[0]] #Checks if given word is close match to another in dict keys, [0] returns first word in the check
         if yn == "N":
-            return "Sorry"
+            return "That word doesn't exist, sorry."
     else:
         return "That word doesn't exist"
 
