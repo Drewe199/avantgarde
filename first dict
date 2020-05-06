@@ -12,13 +12,20 @@ def translate(w):
         if yn == "Y":
             return data[get_close_matches(w, data.keys())[0]] #Checks if given word is close match to another in dict keys, [0] returns first word in the check
         if yn == "N":
-            return "That word doesn't exist, sorry."
+            return "Sorry"
     else:
         return "That word doesn't exist"
-
- # user input   
+ 
 word = input("Enter a word: ")
 
 # translate is a builtin function of python
 
 print(translate(word))
+
+output = translate(word)
+
+if type(output) == list:
+    for item in output:
+        print(item)
+else:
+    print(output)
