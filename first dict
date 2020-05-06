@@ -1,0 +1,24 @@
+import json
+from difflib import get_close_matches
+
+data = json.load(open("data.json"))
+# Function below - translate is a builtin function, returns the data in the json file
+def translate(w):
+    w = w.lower() # Data file only processes lowercase letters, this makes all user inputs be processed in lowercase
+    if w in data:
+        return data[w]
+    elif len(get_close_matches(w, data.keys())) > 0:
+        yn = input("Did you mean %s instead? Enter Y if yes, or N if no: " % get_close_matches(w, data.keys())[0])
+        if yn == "Y":
+            return data[get_close_matches(w, data.keys())[0]] #Checks if given word is close match to another in dict keys, [0] returns first word in the check
+        if yn == "N":
+            return "Sorry"
+    else:
+        return "That word doesn't exist"
+
+ # user input   
+word = input("Enter a word: ")
+
+# translate is a builtin function of python
+
+print(translate(word))
